@@ -1,22 +1,22 @@
-import { render } from "react-dom";
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-  } from "react-router-dom";
-  import { LoginPage,ContactsPage,RegisterPage, MainPage } from "pages";
+import { render } from 'react-dom';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const LoginPage = lazy(() => import('pages/LoginPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage'));
+const Layout = lazy(() => import('pages/MainPage'));
 
 render(
-    <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<MainPage/>}>
-                    <Route path='register' element={<RegisterPage/>}/>
-                    <Route path='login' element={<LoginPage/>}/>
-                    <Route path='contacts' element={<ContactsPage/>}/>
-                </Route>
-            </Routes>
-        </BrowserRouter>,
-    document.getElementById('root')
-)
-        
-    
+  <BrowserRouter>
+    <Suspense fallback="">
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route path="sign-up-form" element={<RegisterPage />} />
+        <Route path="log-in-form" element={<LoginPage />} />
+        <Route path="contacts" element={<ContactsPage />} />
+      </Routes>
+    </Suspense>
+  </BrowserRouter>,
+  document.getElementById('root')
+);
