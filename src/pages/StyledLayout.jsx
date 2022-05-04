@@ -9,6 +9,9 @@ display: inline-block;
 margin-left: 10px;
 text-decoration: none;
 color: #000;
+&.active{
+    color: red;
+}
 `
 export const Wrapper = styled.div`
 padding: 0 20px 0 20px;
