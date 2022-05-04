@@ -10,6 +10,7 @@ export default function Layout() {
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/sign_up">Sign up</StyledLink>
         <StyledLink to="/log_in">Log in</StyledLink>
+        <StyledLink to="/contacts">Contacts</StyledLink>
       </Header>
 
       <Outlet />
