@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 
-const LogInForm = () =>{
+ const LogInForm = () => {
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -27,3 +27,5 @@ const LogInForm = () =>{
       );
 
 }
+
+export default LogInForm;
