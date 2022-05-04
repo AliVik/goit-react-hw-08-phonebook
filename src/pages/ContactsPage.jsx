@@ -5,11 +5,11 @@ import {
   Wrapper,
   PhonebookHeading,
   ContactsHeading,
-} from './Form/StyledForm';
-import Form from './Form';
-import ContactList from './ContactList';
-import Filter from './Filter';
-import { LackOfFriendsPhrase } from './Filter/StyledFilter';
+} from '../components/Form/StyledForm';
+import Form from '../components/Form/Form';
+import ContactList from '../components/ContactList/ContactList';
+import Filter from '../components/Filter/Filter';
+import { LackOfFriendsPhrase } from '../components/Filter/StyledFilter';
 import {
   useGetContactsFromApiQuery,
   useAddContactToApiMutation,
