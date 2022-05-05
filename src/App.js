@@ -1,7 +1,5 @@
-import { render } from 'react-dom';
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { ContactsPage, RegisterPage, HomePage, LoginPage, Layout } from 'pages';
+import { Routes, Route } from 'react-router-dom';
 
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const ContactsPage = lazy(() => import('pages/ContactsPage'));
@@ -15,8 +13,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="sign_up" element={<RegisterPage />} />
-          <Route path="log_in" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="login" element={<LoginPage />} />
           <Route path="contacts" element={<ContactsPage />} />
         </Route>
       </Routes>

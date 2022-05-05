@@ -20,14 +20,3 @@ color: #000;
 export const Wrapper = styled.div`
 padding: 0 20px 0 20px;
 `
-export const SuccessLogInWrapper = styled.div`
-display: flex;
-`
-export const LogOutButton = styled.button`
-
-padding: 5px 40px;
-border-radius: 5%;
-`
-export const GreetingText = styled.p`
-margin-right: 5px;
-`
