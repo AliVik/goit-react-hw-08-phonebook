@@ -4,7 +4,7 @@ import { InputLabel } from './StyledLoginForm';
  const LogInForm = () => {
     const formik = useFormik({
         initialValues: {
-            username: '',
+            name: '',
             password: '',
         },
         onSubmit: values => {
@@ -14,15 +14,15 @@ import { InputLabel } from './StyledLoginForm';
     return (
         <form onSubmit={formik.handleSubmit}>
           <h1>Log In</h1>
-          <InputLabel htmlFor="username">
+          <InputLabel htmlFor="name">
             <p>User name</p>
             
             <input
-            id="username"
-            name="username"
-            type="username"
+            id="name"
+            name="name"
+            type="name"
             onChange={formik.handleChange}
-            value={formik.values.username}
+            value={formik.values.name}
           />
             </InputLabel>
             <InputLabel htmlFor="password">
