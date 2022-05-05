@@ -9,5 +9,8 @@ padding: 5px 40px;
 border-radius: 5%;
 `
 export const GreetingText = styled.p`
+margin: 0;
+`
+export const GreetingTextWrapper = styled.div`
 margin-right: 5px;
 `
