@@ -14,7 +14,7 @@ export default function Layout() {
         <StyledLink to="/login">Log in</StyledLink>
         <StyledLink to="/contacts">Contacts</StyledLink>
         </div>
-        <UserMenu/>
+        
      
       </Header>
 

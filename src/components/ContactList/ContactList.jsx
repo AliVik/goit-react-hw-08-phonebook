@@ -5,10 +5,10 @@ import {
   ContactName,
   DeleteBtn,
 } from './StyledContactList';
-import {useDeleteContactFromApiMutation} from '../../features/apiSlice';
+// import {useDeleteContactFromApiMutation} from '../../features/apiSlice';
 
 export default function ContactList({ contacts }) {
-  const [deleteContact] = useDeleteContactFromApiMutation()
+  // const [deleteContact] = useDeleteContactFromApiMutation()
   return (
     <>
       <ContactListTag>
@@ -20,7 +20,7 @@ export default function ContactList({ contacts }) {
               </ContactName>
               <DeleteBtn
                 type="button"
-                onClick={() => deleteContact(contact.id)}
+                onClick={()=>console.log("Deleted")}
               >
                 Delete
               </DeleteBtn>
