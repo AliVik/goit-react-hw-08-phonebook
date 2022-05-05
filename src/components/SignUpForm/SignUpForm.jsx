@@ -1,29 +1,41 @@
 import { useFormik } from 'formik';
 import { InputLabel } from './StyledSignUpForm';
+import { useSignUpUserMutation } from 'features/apiSlice';
+import { useDispatch } from 'react-redux';
+import { register } from 'features/authSlice';
+
 
  const SignUpForm = () => {
+   const [signUpUser] = useSignUpUserMutation();
+   const dispatch = useDispatch();
     const formik = useFormik({
         initialValues: {
-            username: '',
+            name: '',
             email: '',
             password: '',
         },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit: async user => {
+      const returnedUser = await signUpUser(user,{
+        selectFromResult: ({data}) => data.user
+      });
+       dispatch(register(returnedUser));
+       formik.resetForm();
           },
+        
     })
+  
     return (
         <form onSubmit={formik.handleSubmit}>
-            <h1>Sign Up</h1>
-              <InputLabel htmlFor="username">
+            <h1>Sign up</h1>
+              <InputLabel htmlFor="name">
               <p>User name</p>
               
               <input
-            id="username"
-            name="username"
-            type="username"
+            id="name"
+            name="name"
+            type="name"
             onChange={formik.handleChange}
-            value={formik.values.username}
+            value={formik.values.name}
           />
           </InputLabel>
           <InputLabel htmlFor="email">
@@ -51,7 +63,7 @@ import { InputLabel } from './StyledSignUpForm';
           
          
     
-          <button type="submit">Sign Up</button>
+          <button type="submit">Sign up</button>
         </form>
       );
 
