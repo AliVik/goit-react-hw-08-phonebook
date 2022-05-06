@@ -4,4 +4,6 @@ const getUserEmail = state => state.auth.user.email;
 
 const getUserName = state => state.auth.user.name;
 
-export default { getIsLoggedIn, getUserEmail, getUserName };
+const getUserToken = state => state.auth.token;
+
+export default { getIsLoggedIn, getUserEmail, getUserName, getUserToken };
