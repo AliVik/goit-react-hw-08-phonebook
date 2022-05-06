@@ -4,7 +4,6 @@ import { useSignUpUserMutation } from 'features/apiSlice';
 import { useDispatch } from 'react-redux';
 import { register } from 'features/authSlice';
 
-
  const SignUpForm = () => {
    const [signUpUser] = useSignUpUserMutation();
    const dispatch = useDispatch();
