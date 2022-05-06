@@ -5,10 +5,8 @@ export const userApiSlice = createApi({
   reducerPath: 'auth',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://connections-api.herokuapp.com',
-
     prepareHeaders: headers => {
       const token = store.getState().auth.token;
-      console.log(token);
 
       if (token) {
         headers.set('Authorization', `Bearer ${token}`);
