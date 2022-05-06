@@ -11,24 +11,26 @@ import authSelectors from '../features/authSelectors'
 
 export default function Layout() {
 const IsLoggedIn = useSelector(authSelectors.getIsLoggedIn)
-console.log(IsLoggedIn)
+
   return (
     <Wrapper>
       <Header>
-        <div>
+        
         <StyledLink to="/">Home</StyledLink>
-        {/* {!IsLoggedIn && <> */}
+      
+       
+        {IsLoggedIn?
+        <> <StyledLink to="/contacts">Contacts</StyledLink>
+           <UserMenu/>
+        </> :<>
           <StyledLink to="/register">Sign up</StyledLink>
-        <StyledLink to="/login">Log in</StyledLink>
-        {/* </> */}
-        {/* } */}
+          <StyledLink to="/login">Log in</StyledLink>
+        </>}
        
-        {/* {IsLoggedIn&&  */}
-        <StyledLink to="/contacts">Contacts</StyledLink>
-        {/* // } */}
        
-        </div>
-        {IsLoggedIn&&<UserMenu/>}
+        
+       
+        {/* {IsLoggedIn&&} */}
      
       </Header>
 

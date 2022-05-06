@@ -1,12 +1,21 @@
 import {Wrapper} from './StyledLayout';
-import {GreetingHeading} from './StyledHomePage';
+import {GreetingHeading,GreetingWords,HomePageSection,Image} from './StyledHomePage';
+import HomePageImage from '../images/homepage.jpg'
 
 export default function HomePage(){
     return(
-        <section>
+        <HomePageSection>
         <Wrapper>
-          <GreetingHeading>Welcome to The Web Phonebook App!</GreetingHeading>
+          <GreetingHeading>
+            <GreetingWords>Welcome to </GreetingWords>
+            <GreetingWords>The Web Phonebook App!</GreetingWords> 
+          </GreetingHeading>
         </Wrapper>
-      </section>
+        <Wrapper>
+        <Image src={HomePageImage}/>
+        </Wrapper>
+         
+        
+      </HomePageSection>
     )
 }
