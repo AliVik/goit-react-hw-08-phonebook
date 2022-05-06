@@ -1,26 +1,28 @@
 import { useFormik } from 'formik';
 import { InputLabel } from './StyledLoginForm';
 import {useLogInUserMutation} from 'features/apiSlice';
-import { useDispatch,useSelector } from 'react-redux';
-import authSelectors from 'features/authSelectors';
+import { useDispatch } from 'react-redux';
 import { logIn } from 'features/authSlice';
+import { useNavigate } from 'react-router-dom';
 
  const LogInForm = () => {
    const [logInUser] = useLogInUserMutation();
    const dispatch = useDispatch();
+   const navigate = useNavigate();
    
     const formik = useFormik({
         initialValues: {
-            name: '',
+            email: '',
             password: '',
         },
         onSubmit: async user => {
-          console.log(user)
           const returnedUser = await logInUser(user, {
             selectFromResult: ({data}) => console.log(data.user)
           })
         dispatch(logIn(returnedUser))
-        formik.resetForm();
+        navigate('/contacts')
+
+        formik.resetForm()
           },
     })
     return (
@@ -34,7 +36,8 @@ import { logIn } from 'features/authSlice';
             name="email"
             type="email"
             onChange={formik.handleChange}
-          
+            value={formik.values.email}
+           
           />
             </InputLabel>
             <InputLabel htmlFor="password">
@@ -45,6 +48,8 @@ import { logIn } from 'features/authSlice';
             name="password"
             type="password"
             onChange={formik.handleChange}
+            value={formik.values.password}
+           
          
           />
             </InputLabel>

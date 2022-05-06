@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SuccessLogInWrapper = styled.div`
 display: flex;
+margin-left: auto;
 `
 export const LogOutButton = styled.button`
 
@@ -13,4 +14,5 @@ margin: 0;
 `
 export const GreetingTextWrapper = styled.div`
 margin-right: 5px;
+
 `
