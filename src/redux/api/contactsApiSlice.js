@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { store } from 'redux/store';
 
-export const contactsApiSlice = createApi({
+const contactsApiSlice = createApi({
   reducerPath: 'contactsApiSlice',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://connections-api.herokuapp.com',
@@ -18,6 +18,7 @@ export const contactsApiSlice = createApi({
   endpoints: builder => ({
     getContacts: builder.query({
       query: () => `/contacts`,
+      keepUnusedDataFor: 5,
       providesTags: ['contacts'],
     }),
     postContact: builder.mutation({
@@ -51,3 +52,5 @@ export const {
   useDeleteContactMutation,
   usePatchContactMutation,
 } = contactsApiSlice;
+
+export default contactsApiSlice;

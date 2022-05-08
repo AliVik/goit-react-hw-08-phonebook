@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import filterSlice from 'features/filterSlice';
+import filterSlice from 'redux/filter/filterSlice';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import authReducer from 'redux/auth/authSlice';
-import { userApiSlice } from './api/userApiSlice';
+import { userApiSlice, contactsApiSlice } from './api';
 
 const persistConfig = {
   key: 'auth',
@@ -16,15 +16,17 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    // filter: filterSlice.reducer,
+    filter: filterSlice.reducer,
     auth: persistedReducer,
     [userApiSlice.reducerPath]: userApiSlice.reducer,
+    [contactsApiSlice.reducerPath]: contactsApiSlice.reducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
       serializableCheck: false,
     }),
     userApiSlice.middleware,
+    contactsApiSlice.middleware,
   ],
 });
 
