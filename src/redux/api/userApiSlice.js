@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { store } from 'redux/store';
 
 export const userApiSlice = createApi({
-  reducerPath: 'auth',
+  reducerPath: 'userApiSlice',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://connections-api.herokuapp.com',
     prepareHeaders: headers => {
@@ -39,6 +39,11 @@ export const userApiSlice = createApi({
       }),
       providesTags: ['users'],
     }),
+
+    getUser: builder.query({
+      query: () => '/users/current',
+      providesTags: ['users'],
+    }),
   }),
 });
 
@@ -46,4 +51,5 @@ export const {
   useSignUpUserMutation,
   useLogInUserMutation,
   useLogOutUserMutation,
+  useGetUserQuery,
 } = userApiSlice;
