@@ -4,6 +4,8 @@ import { useSignUpUserMutation } from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
+import registerImg from 'images/registerpage.jpg';
+import {RegisterSection,Image,RegisterImageWrapper, RegisterFormWrapper} from './StyledSignUpForm';
 
  const SignUpForm = () => {
    const [signUpUser] = useSignUpUserMutation();
@@ -28,6 +30,8 @@ import { useNavigate } from 'react-router-dom';
     })
   
     return (
+      <RegisterSection>
+        <RegisterFormWrapper>
         <form onSubmit={formik.handleSubmit}>
             <h1>Sign up</h1>
               <InputLabel htmlFor="name">
@@ -63,11 +67,15 @@ import { useNavigate } from 'react-router-dom';
             value={formik.values.password}
           />
           </InputLabel>
-          
-         
-    
           <button type="submit">Sign up</button>
         </form>
+        </RegisterFormWrapper>
+        <RegisterImageWrapper>
+          <Image src={registerImg} alt="girl with robot" />
+        </RegisterImageWrapper>
+
+      </RegisterSection>
+        
       );
 
 }

@@ -5,12 +5,14 @@ display: flex;
 margin-left: auto;
 `
 export const LogOutButton = styled.button`
-
-padding: 5px 40px;
-border-radius: 5%;
+background-color: orange;
+padding: 2px 20px;
+border-radius: 5px;
+font-weight: bold;
 `
 export const GreetingText = styled.p`
 margin: 0;
+color: #fff;
 `
 export const GreetingTextWrapper = styled.div`
 margin-right: 5px;

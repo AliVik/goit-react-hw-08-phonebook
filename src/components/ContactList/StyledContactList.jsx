@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const ContactListTag = styled.ul`
-  margin: auto;
   padding: 0;
-  max-width: 500px;
   margin-top: 30px;
 `;
 
@@ -23,7 +21,19 @@ export const ContactName = styled.span`
 
 export const DeleteBtn = styled.button`
   background-color: #bd2d3c;
+  cursor: pointer;
   color: #fff;
   border: none;
   height: 30px;
 `;
+
+export const PatchButton = styled.button`
+margin-right: 5px;
+cursor: pointer;
+padding: 0 10px 0 10px;
+background-color: #630990;
+color: #fff;
+border: none;
+height: 30px;
+
+`

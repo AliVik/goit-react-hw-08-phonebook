@@ -1,9 +1,10 @@
 import { useFormik } from 'formik';
-import { InputLabel } from './StyledLoginForm';
+import { InputLabel, LoginSection, Image, LoginImageWrapper, LoginFormWrapper } from './StyledLoginForm';
 import {useLogInUserMutation} from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
+import loginImg from 'images/loginpage.jpg';
 
  const LogInForm = () => {
    const [logInUser] = useLogInUserMutation();
@@ -27,6 +28,11 @@ import { useNavigate } from 'react-router-dom';
           },
     })
     return (
+      <LoginSection>
+          <LoginImageWrapper>
+          <Image src={loginImg} alt="hacker girl login" />
+        </LoginImageWrapper>
+        <LoginFormWrapper>
         <form onSubmit={formik.handleSubmit}>
           <h1>Log In</h1>
           <InputLabel htmlFor="email">
@@ -58,6 +64,10 @@ import { useNavigate } from 'react-router-dom';
     
           <button type="submit">Submit</button>
         </form>
+        </LoginFormWrapper>
+      
+      </LoginSection>
+       
       );
 
 }

@@ -2,9 +2,6 @@ import styled from "styled-components";
 
 export const GreetingHeading = styled.h1`
 margin: 0;
-margin-top: 100px;
-margin-right:100px;
-max-width: 400px;
 `
 export const GreetingWords = styled.span`
 display: block;
@@ -14,12 +11,28 @@ display: block;
 
 `
 export const HomePageSection = styled.section`
-padding: 50px 0 50px 0;
+padding: 0 0 50px 0;
 display: flex;
 justify-items: space-between;
+
 `
 
 export const Image = styled.img`
 display: block;
-width: 450px;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 92vh;
+`
+
+export const HomePageImageWrapper = styled.div`
+padding: 50px 200px 0 50px;
+position: relative;
+width: 100%;
+margin-left: 100px;
+`
+
+export const HomePageWordsWrapper = styled.div`
+padding: 170px 20px 0 30px;
 `

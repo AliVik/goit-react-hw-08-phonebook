@@ -1,11 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const LoginPage = lazy(() => import('pages/LoginPage'));
-const ContactsPage = lazy(() => import('pages/ContactsPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
-const Layout = lazy(() => import('pages/Layout'));
-const HomePage = lazy(() => import('pages/HomePage'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
+const Layout = lazy(() => import('pages/Layout/Layout'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 
 export default function App() {
   return (

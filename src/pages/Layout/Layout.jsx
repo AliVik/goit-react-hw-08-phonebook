@@ -1,10 +1,9 @@
 
 import { Outlet } from 'react-router-dom';
 import {Header,StyledLink} from './StyledLayout';
-import {Wrapper} from './StyledLayout';
 import UserMenu from 'components/UserMenu';
 import { useSelector } from 'react-redux';
-import authSelectors from '../redux/auth/authSelectors'
+import authSelectors from 'redux/auth/authSelectors'
 import { useEffect } from 'react';
 import { useGetUserQuery } from 'redux/api/userApiSlice';
 import { refresh } from 'redux/auth//authSlice';
@@ -26,7 +25,7 @@ useEffect(()=> {
 
 
   return (
-    <Wrapper>
+    <>
       <Header>
         
         <StyledLink to="/">Home</StyledLink>
@@ -39,15 +38,10 @@ useEffect(()=> {
           <StyledLink to="/register">Sign up</StyledLink>
           <StyledLink to="/login">Log in</StyledLink>
         </>}
-       
-       
-        
-       
-        {/* {IsLoggedIn&&} */}
      
       </Header>
 
       <Outlet />
-    </Wrapper>
+    </>
   );
 }

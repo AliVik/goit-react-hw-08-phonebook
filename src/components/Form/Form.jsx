@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormTag, LabelNames, LabelWrapper, Button } from './StyledForm';
+import { FormTag, LabelNames, Label, Button } from './StyledForm';
 
 export default function Form({ onSubmit }) {
   const [name, setName] = useState('');
@@ -30,8 +30,8 @@ export default function Form({ onSubmit }) {
 
   return (
     <FormTag onSubmit={OnFormSubmit}>
-      <LabelWrapper>
-        <label>
+      
+        <Label>
           <LabelNames>Name</LabelNames>
           <input
             type="text"
@@ -41,8 +41,8 @@ export default function Form({ onSubmit }) {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
-        </label>
-        <label>
+        </Label>
+        <Label>
           <LabelNames>Number</LabelNames>
           <input
             type="tel"
@@ -52,8 +52,8 @@ export default function Form({ onSubmit }) {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
-        </label>
-      </LabelWrapper>
+        </Label>
+     
 
       <Button type="submit" name="button">
         Add contact
