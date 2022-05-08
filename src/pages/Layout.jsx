@@ -4,13 +4,26 @@ import {Header,StyledLink} from './StyledLayout';
 import {Wrapper} from './StyledLayout';
 import UserMenu from 'components/UserMenu';
 import { useSelector } from 'react-redux';
-import authSelectors from '../features/authSelectors'
-
-
-
+import authSelectors from '../redux/auth/authSelectors'
+import { useEffect } from 'react';
+import { useGetUserQuery } from 'redux/api/userApiSlice';
+import { refresh } from 'redux/auth//authSlice';
+import { useDispatch } from 'react-redux';
 
 export default function Layout() {
-const IsLoggedIn = useSelector(authSelectors.getIsLoggedIn)
+  const dispatch = useDispatch();
+const IsLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+const token = useSelector(authSelectors.getUserToken);
+const {data} =  useGetUserQuery(token, {
+skip: token===null,
+});
+
+useEffect(()=> {
+  if(data){
+    dispatch(refresh(data));
+  }
+},[data, dispatch])
+
 
   return (
     <Wrapper>
