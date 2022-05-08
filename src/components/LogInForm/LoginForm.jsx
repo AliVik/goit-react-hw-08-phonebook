@@ -1,8 +1,8 @@
 import { useFormik } from 'formik';
 import { InputLabel } from './StyledLoginForm';
-import {useLogInUserMutation} from 'features/apiSlice';
+import {useLogInUserMutation} from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
-import { logIn } from 'features/authSlice';
+import { logIn } from 'redux/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
 
  const LogInForm = () => {
@@ -17,10 +17,11 @@ import { useNavigate } from 'react-router-dom';
         },
         onSubmit: async user => {
           const returnedUser = await logInUser(user, {
-            selectFromResult: ({data}) => console.log(data.user)
+            selectFromResult: ({data}) => data.user
           })
         dispatch(logIn(returnedUser))
         navigate('/contacts')
+     
 
         formik.resetForm()
           },

@@ -1,8 +1,8 @@
 import { useFormik } from 'formik';
 import { InputLabel } from './StyledSignUpForm';
-import { useSignUpUserMutation } from 'features/apiSlice';
+import { useSignUpUserMutation } from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
-import { register } from 'features/authSlice';
+import { register } from 'redux/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
 
  const SignUpForm = () => {
@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
       const returnedUser = await signUpUser(user,{
         selectFromResult: ({data}) => data.user
       });
+     
        dispatch(register(returnedUser));
        formik.resetForm();
        navigate("/contacts")

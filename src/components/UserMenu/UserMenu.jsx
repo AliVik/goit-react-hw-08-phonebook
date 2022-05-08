@@ -1,8 +1,8 @@
 import {SuccessLogInWrapper, LogOutButton, GreetingText,GreetingTextWrapper} from './StyledUserMenu';
 import { useSelector, useDispatch } from 'react-redux';
-import authSelectors from 'features/authSelectors';
-import { useLogOutUserMutation } from 'features/apiSlice';
-import {logOut} from 'features/authSlice';
+import authSelectors from 'redux/auth/authSelectors';
+import { useLogOutUserMutation } from 'redux/api/userApiSlice';
+import {logOut} from 'redux/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
 
 
