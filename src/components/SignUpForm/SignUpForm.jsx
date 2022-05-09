@@ -3,14 +3,12 @@ import { InputLabel } from './StyledSignUpForm';
 import { useSignUpUserMutation } from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authSlice';
-import { useNavigate } from 'react-router-dom';
 import registerImg from 'images/registerpage.jpg';
 import {RegisterSection,Image,RegisterImageWrapper, RegisterFormWrapper} from './StyledSignUpForm';
 
  const SignUpForm = () => {
    const [signUpUser] = useSignUpUserMutation();
    const dispatch = useDispatch();
-   const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -24,7 +22,6 @@ import {RegisterSection,Image,RegisterImageWrapper, RegisterFormWrapper} from '.
      
        dispatch(register(returnedUser));
        formik.resetForm();
-       navigate("/contacts")
           },
         
     })
