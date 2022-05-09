@@ -3,13 +3,11 @@ import { InputLabel, LoginSection, Image, LoginImageWrapper, LoginFormWrapper } 
 import {useLogInUserMutation} from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authSlice';
-import { useNavigate } from 'react-router-dom';
 import loginImg from 'images/loginpage.jpg';
 
  const LogInForm = () => {
    const [logInUser] = useLogInUserMutation();
    const dispatch = useDispatch();
-   const navigate = useNavigate();
    
     const formik = useFormik({
         initialValues: {
@@ -21,8 +19,6 @@ import loginImg from 'images/loginpage.jpg';
             selectFromResult: ({data}) => data.user
           })
         dispatch(logIn(returnedUser))
-        navigate('/contacts')
-     
 
         formik.resetForm()
           },
