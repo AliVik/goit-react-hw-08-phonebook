@@ -4,7 +4,6 @@ import {
   ContactListItem,
   ContactName,
   DeleteBtn,
-  PatchButton
 } from './StyledContactList';
 import { useDeleteContactMutation } from 'redux/api/contactsApiSlice';
 
@@ -21,14 +20,13 @@ export default function ContactList({ contacts }) {
                 {contact.name}: {contact.number}
               </ContactName>
               <div>
-              <DeleteBtn
-                type="button"
-                onClick={()=>deleteContact(contact.id)}
-              >
-                Delete
-              </DeleteBtn>
+                <DeleteBtn
+                  type="button"
+                  onClick={() => deleteContact(contact.id)}
+                >
+                  Delete
+                </DeleteBtn>
               </div>
-              
             </ContactListItem>
           );
         })}

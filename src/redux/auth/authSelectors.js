@@ -6,4 +6,9 @@ const getUserName = state => state.auth.user.name;
 
 const getUserToken = state => state.auth.token;
 
-export default { getIsLoggedIn, getUserEmail, getUserName, getUserToken };
+export default {
+  getIsLoggedIn,
+  getUserEmail,
+  getUserName,
+  getUserToken,
+};
