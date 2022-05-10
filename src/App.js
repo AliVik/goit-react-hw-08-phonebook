@@ -17,7 +17,7 @@ export default function App() {
           <Route
             path="register"
             element={
-              <PublicRoute>
+              <PublicRoute restricted>
                 <RegisterPage />
               </PublicRoute>
             }
@@ -25,11 +25,10 @@ export default function App() {
           <Route
             path="login"
             element={
-              <PublicRoute>
+              <PublicRoute restricted>
                 <LoginPage />
               </PublicRoute>
             }
-            restricted
           />
           <Route
             path="contacts"
