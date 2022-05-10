@@ -1,6 +1,12 @@
 import { useFormik } from 'formik';
 import toast, { Toaster } from 'react-hot-toast';
-import { InputLabel } from './StyledSignUpForm';
+import {
+  InputLabel,
+  SignUpFormHeading,
+  SignUpFormInput,
+  SignUpFormInputNames,
+  SubmitBtn,
+} from './StyledSignUpForm';
 import { useSignUpUserMutation } from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authSlice';
@@ -33,11 +39,11 @@ const SignUpForm = () => {
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
-        <h1>Sign up</h1>
+        <SignUpFormHeading>Sign up</SignUpFormHeading>
         <InputLabel htmlFor="name">
-          <p>User name</p>
+          <SignUpFormInputNames>Name</SignUpFormInputNames>
 
-          <input
+          <SignUpFormInput
             id="name"
             name="name"
             type="name"
@@ -46,9 +52,9 @@ const SignUpForm = () => {
           />
         </InputLabel>
         <InputLabel htmlFor="email">
-          <p>Email Address</p>
+          <SignUpFormInputNames>E-mail</SignUpFormInputNames>
 
-          <input
+          <SignUpFormInput
             id="email"
             name="email"
             type="email"
@@ -57,9 +63,9 @@ const SignUpForm = () => {
           />
         </InputLabel>
         <InputLabel htmlFor="password">
-          <p>Password</p>
+          <SignUpFormInputNames>Password</SignUpFormInputNames>
 
-          <input
+          <SignUpFormInput
             id="password"
             name="password"
             type="password"
@@ -67,7 +73,7 @@ const SignUpForm = () => {
             value={formik.values.password}
           />
         </InputLabel>
-        <button type="submit">Sign up</button>
+        <SubmitBtn type="submit">Sign up</SubmitBtn>
       </form>
       <Toaster />
     </>

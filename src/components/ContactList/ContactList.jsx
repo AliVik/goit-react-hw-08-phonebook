@@ -11,27 +11,25 @@ export default function ContactList({ contacts }) {
   const [deleteContact] = useDeleteContactMutation();
 
   return (
-    <>
-      <ContactListTag>
-        {contacts.map(contact => {
-          return (
-            <ContactListItem key={contact.id}>
-              <ContactName>
-                {contact.name}: {contact.number}
-              </ContactName>
-              <div>
-                <DeleteBtn
-                  type="button"
-                  onClick={() => deleteContact(contact.id)}
-                >
-                  Delete
-                </DeleteBtn>
-              </div>
-            </ContactListItem>
-          );
-        })}
-      </ContactListTag>
-    </>
+    <ContactListTag>
+      {contacts.map(contact => {
+        return (
+          <ContactListItem key={contact.id}>
+            <ContactName>
+              {contact.name}: {contact.number}
+            </ContactName>
+            <div>
+              <DeleteBtn
+                type="button"
+                onClick={() => deleteContact(contact.id)}
+              >
+                Delete
+              </DeleteBtn>
+            </div>
+          </ContactListItem>
+        );
+      })}
+    </ContactListTag>
   );
 }
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContactListTag = styled.ul`
   padding: 0;
@@ -9,14 +9,19 @@ export const ContactListItem = styled.li`
   list-style: none;
   display: flex;
   justify-content: space-between;
-  box-shadow: -1px 1px 15px -9px rgba(34, 60, 80, 0.6);
+  padding: 10px;
+  width: 400px;
+  align-items: baseline;
+  background-color: #000;
   :not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 2px;
   }
 `;
 
 export const ContactName = styled.span`
   margin-right: 10px;
+  color: #fff;
+  text-transform: uppercase;
 `;
 
 export const DeleteBtn = styled.button`
@@ -24,16 +29,6 @@ export const DeleteBtn = styled.button`
   cursor: pointer;
   color: #fff;
   border: none;
-  height: 30px;
+  border-radius: 3px;
+  padding: 8px 16px;
 `;
-
-export const PatchButton = styled.button`
-margin-right: 5px;
-cursor: pointer;
-padding: 0 10px 0 10px;
-background-color: #630990;
-color: #fff;
-border: none;
-height: 30px;
-
-`

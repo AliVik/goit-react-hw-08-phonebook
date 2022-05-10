@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Label = styled.label`
   display: block;
@@ -17,4 +17,14 @@ export const LackOfFriendsPhrase = styled.p`
   margin-right: auto;
   text-align: center;
   font-weight: bold;
+`;
+
+export const FilterInput = styled.input`
+  border: none;
+  border-bottom: 1px solid #000;
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid #000;
+  }
+  outline: none;
 `;

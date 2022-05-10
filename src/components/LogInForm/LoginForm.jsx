@@ -1,5 +1,11 @@
 import { useFormik } from 'formik';
-import { InputLabel } from './StyledLoginForm';
+import {
+  InputLabel,
+  LoginFormHeading,
+  LoginFormInput,
+  LoginFormInputNames,
+  SubmitBtn,
+} from './StyledLoginForm';
 import { useLogInUserMutation } from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authSlice';
@@ -33,11 +39,11 @@ const LogInForm = () => {
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
-        <h1>Log In</h1>
+        <LoginFormHeading>Log In</LoginFormHeading>
         <InputLabel htmlFor="email">
-          <p>User email</p>
+          <LoginFormInputNames>E-mail</LoginFormInputNames>
 
-          <input
+          <LoginFormInput
             id="email"
             name="email"
             type="email"
@@ -46,9 +52,9 @@ const LogInForm = () => {
           />
         </InputLabel>
         <InputLabel htmlFor="password">
-          <p>Password</p>
+          <LoginFormInputNames>Password</LoginFormInputNames>
 
-          <input
+          <LoginFormInput
             id="password"
             name="password"
             type="password"
@@ -57,7 +63,7 @@ const LogInForm = () => {
           />
         </InputLabel>
 
-        <button type="submit">Submit</button>
+        <SubmitBtn type="submit">Submit</SubmitBtn>
       </form>
 
       <Toaster />
