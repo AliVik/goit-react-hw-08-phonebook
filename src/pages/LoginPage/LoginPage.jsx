@@ -5,7 +5,7 @@ import {
   LoginImageWrapper,
   LoginFormWrapper,
 } from './StyledLoginPage';
-import loginImg from 'images/loginpage.jpg';
+import loginImg from 'images/loginpage.jpeg';
 
 export default function LoginPage() {
   return (

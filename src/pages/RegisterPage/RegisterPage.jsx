@@ -5,7 +5,7 @@ import {
   RegisterImageWrapper,
   RegisterFormWrapper,
 } from './StyledRegisterPage';
-import registerImg from 'images/registerpage.jpg';
+import registerImg from 'images/registerpage.jpeg';
 
 export default function RegisterPage() {
   return (
