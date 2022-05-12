@@ -1,14 +1,24 @@
 import toast, { Toaster } from 'react-hot-toast';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { SpinnerRoundFilled } from 'spinners-react';
-import { useGetContactsQuery, usePostContactMutation } from 'redux/api/contactsApiSlice';
+import {
+  useGetContactsQuery,
+  usePostContactMutation,
+} from 'redux/api/contactsApiSlice';
 import Form from '../../components/Form/Form';
 import ContactList from '../../components/ContactList/ContactList';
 import Filter from '../../components/Filter/Filter';
 import { LackOfFriendsPhrase } from '../../components/Filter/StyledFilter';
 import { SpinnerWrapper } from '../../StyledSpinner';
-import { ContactsPageSection,AddContactsWrapper, ContactsListWrapper,ContactsImage, PhonebookHeading, ContactsHeading} from './StyledContactsPage';
-import contactsPageImg from 'images/contactsPage2.jpg'
+import {
+  ContactsPageSection,
+  AddContactsWrapper,
+  ContactsListWrapper,
+  ContactsImage,
+  PhonebookHeading,
+  ContactsHeading,
+} from './StyledContactsPage';
+import contactsPageImg from 'images/contactsPage2.jpg';
 
 export default function ContactsPage() {
   const { data, isFetching, isLoading } = useGetContactsQuery();
@@ -41,30 +51,31 @@ export default function ContactsPage() {
   const showMessage = data && data.length === 0 && !isFetching;
   return (
     <ContactsPageSection>
-        <AddContactsWrapper>
-            <PhonebookHeading>Add contact</PhonebookHeading>
-            <Form onSubmit={HandleFormDatas} />
-            <ContactsImage src={contactsPageImg} alt="phones image" />
-        </AddContactsWrapper>
-        <ContactsListWrapper>
-            <ContactsHeading>Contacts</ContactsHeading>
+      <AddContactsWrapper>
+        <PhonebookHeading>Add contact</PhonebookHeading>
+        <Form onSubmit={HandleFormDatas} />
+        <ContactsImage src={contactsPageImg} alt="phones image" />
+      </AddContactsWrapper>
+      <ContactsListWrapper>
+        <ContactsHeading>Contacts</ContactsHeading>
 
-            {showContacts && <Filter />}
+        {showContacts && <Filter />}
 
-            {showMessage && (
-            <LackOfFriendsPhrase>You don`t have any contact :(</LackOfFriendsPhrase>
-            )}
+        {showMessage && (
+          <LackOfFriendsPhrase>
+            You don`t have any contact :(
+          </LackOfFriendsPhrase>
+        )}
 
-            {data && <ContactList contacts={FilterContactList()} />}
+        {data && <ContactList contacts={FilterContactList()} />}
 
-            <Toaster />
-            {showSpinner && (
-            <SpinnerWrapper>
+        <Toaster />
+        {showSpinner && (
+          <SpinnerWrapper>
             <SpinnerRoundFilled size="50%" color="#630990" />
-            </SpinnerWrapper>)}
+          </SpinnerWrapper>
+        )}
       </ContactsListWrapper>
-
     </ContactsPageSection>
-   
   );
 }
