@@ -7,6 +7,12 @@ export const InputLabel = styled.label`
   }
 `;
 
+export const LoginFormTag = styled.form`
+  max-width: 200px;
+  text-align: center;
+  margin: auto;
+`;
+
 export const LoginFormHeading = styled.h1`
   margin-bottom: 20px;
   margin-top: 0;

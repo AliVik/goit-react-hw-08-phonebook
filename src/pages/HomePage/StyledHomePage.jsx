@@ -32,6 +32,7 @@ export const HomePageImageWrapper = styled.div`
     padding: 0 20px 0 20px;
     height: 92.7vh;
     border-left: 4px solid #1097c7;
+    border-top: 0;
   }
 `;
 
@@ -45,5 +46,6 @@ export const HomePageWordsWrapper = styled.div`
   @media screen and (min-width: 769px) {
     padding: 0 20px 0 20px;
     border-right: 4px solid #ffff00;
+    border-bottom: 0;
   }
 `;

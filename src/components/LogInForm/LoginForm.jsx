@@ -5,6 +5,7 @@ import {
   LoginFormInput,
   LoginFormInputNames,
   SubmitBtn,
+  LoginFormTag,
 } from './StyledLoginForm';
 import { useLogInUserMutation } from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
@@ -38,7 +39,7 @@ const LogInForm = () => {
   });
   return (
     <>
-      <form onSubmit={formik.handleSubmit}>
+      <LoginFormTag onSubmit={formik.handleSubmit}>
         <LoginFormHeading>Log In</LoginFormHeading>
         <InputLabel htmlFor="email">
           <LoginFormInputNames>E-mail</LoginFormInputNames>
@@ -64,7 +65,7 @@ const LogInForm = () => {
         </InputLabel>
 
         <SubmitBtn type="submit">Submit</SubmitBtn>
-      </form>
+      </LoginFormTag>
 
       <Toaster />
     </>

@@ -6,6 +6,7 @@ import {
   SignUpFormInput,
   SignUpFormInputNames,
   SubmitBtn,
+  SignUpFormTag,
 } from './StyledSignUpForm';
 import { useSignUpUserMutation } from 'redux/api/userApiSlice';
 import { useDispatch } from 'react-redux';
@@ -38,7 +39,7 @@ const SignUpForm = () => {
 
   return (
     <>
-      <form onSubmit={formik.handleSubmit}>
+      <SignUpFormTag onSubmit={formik.handleSubmit}>
         <SignUpFormHeading>Sign up</SignUpFormHeading>
         <InputLabel htmlFor="name">
           <SignUpFormInputNames>Name</SignUpFormInputNames>
@@ -74,7 +75,7 @@ const SignUpForm = () => {
           />
         </InputLabel>
         <SubmitBtn type="submit">Sign up</SubmitBtn>
-      </form>
+      </SignUpFormTag>
       <Toaster />
     </>
   );

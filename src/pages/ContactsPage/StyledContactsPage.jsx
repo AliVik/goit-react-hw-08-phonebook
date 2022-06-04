@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 
 export const ContactsPageSection = styled.section`
-  display: flex;
+  @media screen and (min-width: 769px) {
+    display: flex;
+  }
 `;
 
 export const AddContactsWrapper = styled.div`
   background-color: #663199;
-  height: 92vh;
+  padding: 20px 0 0 0;
+
+  @media screen and (min-width: 769px) {
+    height: 92vh;
+  }
 `;
 
 export const ContactsListWrapper = styled.div`
-  padding: 0 20px 0 20px;
+  padding: 0 30px 0 30px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -18,22 +24,19 @@ export const ContactsListWrapper = styled.div`
 
 export const ContactsImage = styled.img`
   display: block;
-  width: 400px;
-  margin-top: 10px;
+  max-width: 320px;
+  margin: auto;
 `;
 export const PhonebookHeading = styled.h1`
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
 `;
 
 export const ContactsHeading = styled.h2`
-  max-width: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  // max-width: 200px;
+  text-align: center;
   text-transform: uppercase;
   font-weight: bold;
   color: #000;

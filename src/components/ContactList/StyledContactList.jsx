@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContactListTag = styled.ul`
-  padding: 0;
+  padding: 0 10px 0 10px;
   margin-top: 30px;
 `;
 
@@ -10,7 +10,6 @@ export const ContactListItem = styled.li`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  width: 400px;
   align-items: baseline;
   background-color: #000;
   :not(:last-child) {

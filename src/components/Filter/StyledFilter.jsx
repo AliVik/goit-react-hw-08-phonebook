@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Label = styled.label`
   display: block;
-  max-width: 360px;
+  max-width: 320px;
   margin: auto;
+  text-align: center;
 `;
 export const LabelName = styled.span`
   font-weight: bold;

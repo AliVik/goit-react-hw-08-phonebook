@@ -17,4 +17,9 @@ export const GreetingText = styled.p`
 `;
 export const GreetingTextWrapper = styled.div`
   margin-right: 5px;
+
+  @media screen and (max-width: 360px) {
+    visibility: hidden;
+    transition: visibility 0.3s linear;
+  }
 `;
