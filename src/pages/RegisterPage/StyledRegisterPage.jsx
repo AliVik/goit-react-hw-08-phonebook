@@ -16,7 +16,9 @@ export const Image = styled.img`
 export const RegisterImageWrapper = styled.div`
   background-color: #41b0e5;
   display: flex;
-  height: 100%;
+  height: 60vh;
+  // height: 105%;
+  border-top: 4px solid #1097c7;
 
   @media screen and (min-width: 769px) {
     padding: 0 20px 0 20px;
