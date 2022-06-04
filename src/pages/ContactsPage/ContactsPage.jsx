@@ -33,9 +33,13 @@ export default function ContactsPage() {
       return contact.name.toLowerCase().includes(normalizedDataName);
     });
 
-    checkExistingContact.includes(true)
-      ? toast.error(`${personData.name} is already in contacts`)
-      : postContact(personData);
+    if (checkExistingContact.includes(true)) {
+      toast.error(`${personData.name} is already in contacts`);
+      return;
+    } else {
+      postContact(personData);
+      toast.success(`${personData.name} is succesfully added to contacts`);
+    }
   };
 
   const FilterContactList = () => {
